@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 5px 0 15px;
+            width: 100%;
+        }
+        #preview {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convert Image to Grid</h1>
+    <form action="/process" method="post" enctype="multipart/form-data">
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+
+        <label for="margin">Margin (pixels):</label>
+        <input type="number" id="margin" name="margin" value="10">
+
+        <label for="ratio">Aspect Ratio:</label>
+        <input type="text" id="ratio" name="ratio" value="1:1">
+
+        <label for="sheet_size">Sheet Size:</label>
+        <select id="sheet_size" name="sheet_size">
+            <option value="A3">A3</option>
+            <option value="A4" selected>A4</option>
+            <option value="A5">A5</option>
+        </select>
+
+        <label for="black_white">Black & White Filter:</label>
+        <input type="checkbox" id="black_white" name="black_white">
+
+        <button type="submit">Generate Grid</button>
+    </form>
+</body>
+</html>
